@@ -1,7 +1,0 @@
-FROM php:7.1.17-apache
-
-MAINTAINER ebey <eeye@b3y3r.de>
-
-RUN a2enmod rewrite
-
-COPY apache2.conf /etc/apache2
