@@ -27,3 +27,4 @@ VOLUME /var/www/html
 
 COPY config/apache2.conf /etc/apache2/
 
+COPY config/php.ini /usr/local/etc/php/
