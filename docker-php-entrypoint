@@ -3,7 +3,7 @@ set -e
 
 if [ ! -e /container_started_already ]; then
 	echo "127.0.0.1 localhost $VIRTUAL_HOST $(hostname)" >> /etc/hosts
-	sendmailconfig
+	yes 'y' | sendmailconfig
 	touch /container_started_already
 fi
 
