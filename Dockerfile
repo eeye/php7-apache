@@ -31,3 +31,4 @@ COPY config/apache2.conf /etc/apache2/
 COPY config/php.ini /usr/local/etc/php/
 
 COPY docker-php-entrypoint /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-php-entrypoint
