@@ -4,6 +4,7 @@ RUN set -ex; \
 	\
 	apt-get update; \
 	apt-get install -y \
+		sendmail	\
 		libjpeg-dev \
 		libpng12-dev \
 	; \
@@ -28,3 +29,5 @@ VOLUME /var/www/html
 COPY config/apache2.conf /etc/apache2/
 
 COPY config/php.ini /usr/local/etc/php/
+
+COPY docker-php-entrypoint /usr/local/bin/
