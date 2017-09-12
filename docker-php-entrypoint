@@ -1,7 +1,11 @@
 #!/bin/sh
 set -e
 
-echo "127.0.0.1 localhost $VIRTUAL_HOST $(hostname)" >> /etc/hosts
+if [ -z ${MAIL_HOST+x} ]; then 
+	MAIL_HOST=$VIRTUAL_HOST 
+fi
+
+echo "127.0.0.1 localhost $MAIL_HOST $(hostname)" >> /etc/hosts
 yes 'y' | sendmailconfig
 
 # first arg is `-f` or `--some-option`
