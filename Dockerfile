@@ -6,7 +6,7 @@ RUN set -ex; \
 	apt-get install -y \
 		sendmail	\
 		libjpeg-dev \
-		libxml2-dev \
+		# libxml2-dev \
 		libpng-dev \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
@@ -14,7 +14,7 @@ RUN set -ex; \
 	docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
 	docker-php-ext-install gd mysqli opcache
 
-RUN docker-php-ext-install pdo pdo_mysql zip xml
+# RUN docker-php-ext-install pdo pdo_mysql zip xml
 
 RUN { \
 		echo 'opcache.memory_consumption=128'; \
