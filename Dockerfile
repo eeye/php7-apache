@@ -5,12 +5,13 @@ RUN set -ex; \
 	apt-get update; \
 	apt-get install -y \
 	sendmail	\
-	libjpeg-dev \
+	libfreetype6-dev \
+	libjpeg62-turbo-dev \
 	libpng-dev \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
-	docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/; \
+	docker-php-ext-configure gd --with-jpeg --with-freetype; \
 	docker-php-ext-install gd mysqli opcache pdo pdo_mysql
 
 RUN { \
