@@ -10,7 +10,7 @@ RUN set -ex; \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
-	docker-php-ext-configure gd --with-png=/usr/include/ --with-jpeg=/usr/include/ --with-freetype=/usr/include/; \
+	docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/; \
 	docker-php-ext-install gd mysqli opcache pdo pdo_mysql
 
 RUN { \
